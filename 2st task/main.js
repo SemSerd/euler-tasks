@@ -6,8 +6,7 @@ while (x < 4000000) {
   if (x % 2 === 0) {
     count += x;
   }
-  x = y;
+  x = y - x;
   y = x + y;
-
 }
 console.log(count);
