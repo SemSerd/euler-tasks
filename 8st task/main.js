@@ -2,17 +2,19 @@ const data = '731671765313306249192251196744265747423553491949349698352031277450
 let start = 0;
 let end = 13;
 let current = 0;
-let sub;
+let gap;
 while(data.length > end) {
-  sub = data.slice(start, end);
-  if(!sub.includes('0')) {
-    let temp = sub.split('').reduce((acc,num) => {
+  gap = data.slice(start, end);
+  if(!gap.includes('0')) {
+    let temp = gap.split('').reduce((acc,num) => {
       return acc * num;
     },1);
-    if(temp > current)current = temp;
-  }
-  start +=1;
-  end+=1;
+    if(temp > current) {
+      current = temp;
+    };
+  };
+  start += 1;
+  end += 1;
 }
 
 console.log(current);
